@@ -1,9 +1,0 @@
-from PIL import Image
-
-class ATCMap:
-
-	Map = none;
-
-	def __init__(self):
-		ggg
-

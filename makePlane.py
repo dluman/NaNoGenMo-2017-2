@@ -8,6 +8,7 @@ class Plane():
 	origin = None
 	destination = None
 	img = None
+	squawk = None
 
 	def __init__(self):
 		self.name = self.createName()
@@ -15,6 +16,7 @@ class Plane():
 		self.captain = self.createCaptain()
 		self.origin = self.setOrigin()
 		self.destination = self.setDestination()
+		self.squawk = self.setSquawk()
 
 	def createName(self):
 		airlines = {'TAA':'Trans American Airlines','AIA':'Atlantic International Airlines',
@@ -35,3 +37,9 @@ class Plane():
 
 	def setDestination(self):
 		pass
+
+	def setSquawk(self):
+		with open('transcript.txt','r') as f:
+			contents = f.read()
+		lines = contents.split("\r\n")
+		return random.choice(lines).strip()
